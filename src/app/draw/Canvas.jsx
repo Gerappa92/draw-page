@@ -1,8 +1,15 @@
 import { useRef, useState, useEffect } from "react";
+import { prompts } from "../constants/prompts";
 
-export default function Canvas({width, height, onGenerateImage}) {
+export default function Canvas({
+  width,
+  height,
+  genPromptsOptions,
+  onGenerateImage,
+}) {
   const canvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
+  const [genStyle, setGenStyle] = useState(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -81,6 +88,8 @@ export default function Canvas({width, height, onGenerateImage}) {
   const generateImage = () => {
     const canvas = canvasRef.current;
 
+    console.log(prompts[genStyle]);
+
     // Convert the canvas to a Data URL
     const imageData = canvas.toDataURL("image/png");
 
@@ -132,13 +141,21 @@ export default function Canvas({width, height, onGenerateImage}) {
         onMouseLeave={stopDrawing}
       ></canvas>
       <div style={styles.buttonContainer}>
-        <button style={styles.button} onClick={clearCanvas}>
+        <button onClick={clearCanvas}>
           Clear Canvas
         </button>
-        <button style={styles.button} onClick={saveCanvas}>
+        <button onClick={saveCanvas}>
           Save Canvas
         </button>
-        <button style={styles.button} onClick={generateImage}>
+        <select onChange={(e) => setGenStyle(e.target.value)}>
+          {<option value="">Choose Gen style</option>}
+          {genPromptsOptions.map((option, index) => (
+            <option key={index} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <button onClick={generateImage}>
           Generate Image
         </button>
       </div>
@@ -157,14 +174,5 @@ const styles = {
     gap: "10px",
     justifyContent: "center",
     alignItems: "center",
-  },
-  button: {
-    padding: "10px 20px",
-    backgroundColor: "#6A0DAD", // Purple color
-    color: "#FFFFFF", // White text
-    border: "none",
-    borderRadius: "5px",
-    fontSize: "16px",
-    cursor: "pointer",
-  },
+  }
 };

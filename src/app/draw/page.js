@@ -10,12 +10,36 @@ export default function Draw() {
   const canvasWidth = 640;
   const canvasHeight = 640;
 
+  const genPromptsOptions = [
+    { label: '3D Render', value: '3d_render' },
+    { label: 'Pencil Drawing', value: 'pencil_drawing' },
+    { label: 'Oil Painting', value: 'oil_painting' },
+    { label: 'Watercolor Painting', value: 'watercolor_painting' },
+    { label: 'Digital Art', value: 'digital_art' },
+    { label: 'Charcoal Sketch', value: 'charcoal_sketch' },
+    { label: 'Pop Art', value: 'pop_art' },
+    { label: 'Fantasy Illustration', value: 'fantasy_illustration' },
+    { label: 'Line Art', value: 'line_art' },
+    { label: 'Pixel Art', value: 'pixel_art' },
+    { label: 'Anime Style', value: 'anime_style' },
+    { label: 'Comic Book Style', value: 'comic_book' },
+    { label: 'Surrealist Painting', value: 'surrealist_painting' },
+    { label: 'Impressionist Style', value: 'impressionist' },
+    { label: 'Minimalist Art', value: 'minimalist_art' },
+    { label: 'Graffiti Art', value: 'graffiti_art' },
+    { label: 'Low Poly 3D', value: 'low_poly_3d' },
+    { label: 'Realistic Portrait', value: 'realistic_portrait' },
+    { label: 'Isometric Art', value: 'isometric_art' },
+    { label: 'Steampunk Design', value: 'steampunk_design' },
+  ];
+
 
   return (
     <div style={styles.container}>
       <Canvas 
         width={canvasWidth}
         height={canvasHeight}
+        genPromptsOptions = {genPromptsOptions}
         onGenerateImage={(img) => setGeneratedImage(img)} />
 
       {generatedImage && (
