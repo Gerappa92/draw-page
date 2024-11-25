@@ -5,6 +5,7 @@
     text-align: center; /* Center the text */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     margin-bottom: 30px; /* Space below the header */
+    font-family: 'Pacifico';
   }
   
   .header h1 {

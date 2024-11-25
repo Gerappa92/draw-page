@@ -1,8 +1,6 @@
 .homePage {
   padding: 80px 20px; /* Increased padding for more space around content */
   text-align: center;
-  background-color: #1e1e1e; /* Darker background for the entire homepage */
-  border-radius: 15px; /* Optional rounded corners for the page */
 }
 
 .content {

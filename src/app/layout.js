@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import Pacifico from "next/font/google"
 import "./globals.css";
 
 import Navbar from "./components/Navbar";
@@ -24,10 +25,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+          <head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Parkinsans:wght@300..800&display=swap" rel="stylesheet" />
+    </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className="pageWrapper">
           <Navbar />
-          <Header title="Welcome to Gerappa" subtitle="Your drawing app" />
+          <Header title="Welcome to DrawApp" subtitle="Gen your drawings" />
           <main>{children}</main> {/* The page content */}
           <Footer />
         </div>

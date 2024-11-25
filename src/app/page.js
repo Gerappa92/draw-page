@@ -7,8 +7,7 @@ export default function Home() {
       <section className={styles.content}>
         <p>
           This app lets you create your own drawings using a simple canvas.
-          Choose your brush color, adjust the brush size, and start drawing! You
-          can even save your creations for later.
+          Choose your gen style, and start generating based on your lines!
         </p>
         <Link href="/draw">
           <button className={styles.startButton}>Get Started</button>
