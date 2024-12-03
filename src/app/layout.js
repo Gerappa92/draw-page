@@ -32,7 +32,6 @@ export default function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div>
           <Navbar />
-          <Header title="Welcome to DrawApp" subtitle="Gen your drawings" />
           <main>{children}</main> {/* The page content */}
           <Footer />
         </div>
