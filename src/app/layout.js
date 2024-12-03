@@ -1,5 +1,4 @@
 import localFont from "next/font/local";
-import Pacifico from "next/font/google"
 import "./globals.css";
 
 import Navbar from "./components/Navbar";
@@ -31,7 +30,7 @@ export default function RootLayout({ children }) {
           <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Parkinsans:wght@300..800&display=swap" rel="stylesheet" />
     </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="pageWrapper">
+        <div>
           <Navbar />
           <Header title="Welcome to DrawApp" subtitle="Gen your drawings" />
           <main>{children}</main> {/* The page content */}

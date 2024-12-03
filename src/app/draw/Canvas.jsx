@@ -20,7 +20,7 @@ export default function Canvas({
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Set default drawing styles
-    ctx.lineWidth = 5; // Default brush size
+    ctx.lineWidth = 25; // Default brush size
     ctx.lineCap = "round"; // Smooth line edges
     ctx.strokeStyle = "#FFFFFF"; // Default line color (white)
   }, []);
@@ -66,7 +66,7 @@ export default function Canvas({
     const ctx = canvas.getContext("2d");
 
     // Clear the entire canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     // Reset the generated image
     onGenerateImage(null);
